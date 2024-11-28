@@ -24,3 +24,7 @@ make install
 #### Сборка образа
 * `make build` - собрать образ. Можно с аргументами `DOCKER_TAG`, `DOCKER_IMAGE`
 # face_detect_track
+
+
+##видео для демонстрации работы детектора
+[![Демонстрация работы](https://youtube.com/shorts/SX_3p-AKz1o)
