@@ -27,4 +27,4 @@ make install
 
 
 ##видео для демонстрации работы детектора
-[![Демонстрация работы](https://youtube.com/shorts/SX_3p-AKz1o)
+[![Демонстрация работы](https://img.youtube.com/vi/SX_3p-AKz1o/0.jpg)](https://youtube.com/shorts/SX_3p-AKz1o)
