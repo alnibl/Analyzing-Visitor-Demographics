@@ -26,7 +26,7 @@
 - source venv/bin/activate
 
 Установите зависимости:
-make install
+- make install
 
 ###Для Windows
 Создайте и активируйте виртуальное окружение:
