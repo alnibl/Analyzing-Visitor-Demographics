@@ -81,6 +81,6 @@
 
 ## Демонстрация работы сервиса
 
-[![Демонстрация работы](https://img.youtube.com/vi/SX_3p-AKz1o/0.jpg)](https://www.youtube.com/watch?v=SX_3p-AKz1o)
+[![Демонстрация работы](https://img.youtube.com/vi/bsDTsUvho-A/0.jpg)](https://youtube.com/shorts/bsDTsUvho-A?si=-7fyDlDY4_IYcqBO)
 
 
