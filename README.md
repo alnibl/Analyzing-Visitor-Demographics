@@ -27,15 +27,15 @@
 
 1. **Создайте и активируйте виртуальное окружение:**
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
 Установите зависимости:
-  ```
-  make install
-  ```
+```bash
+make install
+```
 
 ### Для Windows
 Создайте и активируйте виртуальное окружение:
