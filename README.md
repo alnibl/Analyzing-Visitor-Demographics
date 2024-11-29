@@ -39,15 +39,14 @@ make install
 
 ### Для Windows
 Создайте и активируйте виртуальное окружение:
+```
 - python -m venv venv
 - venv\Scripts\activate
-
+```
 Установите зависимости:
-- make install
-
-**Примечание**: Убедитесь, что у вас установлен инструмент make на Windows. 
-Если make отсутствует, вы можете установить зависимости напрямую:
+```
 - pip install -r requirements.txt
+```
 
 ## Команды
 
