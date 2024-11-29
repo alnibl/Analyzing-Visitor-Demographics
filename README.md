@@ -24,6 +24,7 @@
 Создайте и активируйте виртуальное окружение:
 - python3 -m venv venv
 - source venv/bin/activate
+
 Установите зависимости:
 make install
 
