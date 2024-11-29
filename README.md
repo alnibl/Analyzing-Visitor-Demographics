@@ -94,5 +94,5 @@ make install
 ## Контактная информация
   - Автор: Александр Блищ
   - Email: alnibl88@gmail.com
-  - GitHub: Alnibl
+  - GitHub: alnibl
   - LinkedIn: [Александр Блищ](https://www.linkedin.com/in/александр-блищ-77073a125/)
