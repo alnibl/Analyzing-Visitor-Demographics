@@ -54,5 +54,5 @@
 
 ## Видео демонстрация
 
-[![Демонстрация работы]](https://youtube.com/shorts/SX_3p-AKz1o?si=RaVO31f1Ms_uIneQ)
+[[Демонстрация работы]](https://youtube.com/shorts/SX_3p-AKz1o?si=RaVO31f1Ms_uIneQ)
 
