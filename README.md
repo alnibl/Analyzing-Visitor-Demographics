@@ -34,7 +34,7 @@
 
 Установите зависимости:
   ```
-  make install
+   make install
   ```
 
 ### Для Windows
