@@ -2,4 +2,4 @@ model_path: 'weights/yolov8n-face_224_384.onnx'
 device: ${oc.env:SACK_DEVICE,'cpu'}
 
 source_video_path: 0
-target_video_path: 'data/result.mp4'
+target_video_path: 'data/result2.mp4'

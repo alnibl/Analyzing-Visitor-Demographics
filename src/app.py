@@ -14,6 +14,7 @@ MODEL = config["model_path"]
 model = YOLO(MODEL, task='detect')
 imgsz = (224, 384)
 SOURCE_VIDEO_PATH = config["source_video_path"]
+TARGET_VIDEO_PETH = config["target_video_path"]
 print(model)
 print(SOURCE_VIDEO_PATH)
 
@@ -81,7 +82,7 @@ def model_detect_track_run(frame):
                     # Смещение для следующей миниатюры
                     start_y += thumbnail_size[1] + thumbnail_offset
                 # сохранить кадр + миниатюра
-                #cv2.imwrite('data/1_.jpg', img_)
+                # cv2.imwrite('data/1_.jpg', img_)
                 print(f"Прошло: {round(time.time() - start_time, 3)} сек.")
                 return img_
             else:
@@ -93,18 +94,36 @@ def generate_frames():
     if not cap.isOpened():
         raise Exception("Could not open video device")
 
+    # Получаем параметры исходного видео
+    fps_camera = cap.get(cv2.CAP_PROP_FPS)  # Получаем FPS камеры
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    desired_fps = 10  # Желаемая частота кадров
+    frame_skip = int(fps_camera / desired_fps)  # Количество кадров для пропуска
+
+    frame_count = 0  # Счетчик кадров
+
+    # Инициализируем объект записи видео
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')  # Кодек для видео
+    out = cv2.VideoWriter(TARGET_VIDEO_PETH, fourcc, 3, (width, height))
+
     while True:
         success, frame = cap.read()  # Чтение кадра
         if not success:
             break
         else:
-            frame_ = model_detect_track_run(frame)# тут детекция, трекинг и обработка
-            if frame_ is not None:
-                frame = frame_
-            ret, buffer = cv2.imencode('.jpg', frame)  # Кодирование кадра в JPEG
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n'
-                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+            frame_count += 1
+            # Пропускаем кадры, чтобы достичь 10 FPS
+            if frame_count % frame_skip == 0:
+                frame_ = model_detect_track_run(frame)  # тут детекция, трекинг и обработка
+                if frame_ is not None:
+                    frame = frame_
+                # Записываем обработанный кадр в выходное видео
+                out.write(frame)
+                ret, buffer = cv2.imencode('.jpg', frame)  # Кодирование кадра в JPEG
+                frame = buffer.tobytes()
+                yield (b'--frame\r\n'
+                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 @app.route('/video_feed')
 def video_feed():
